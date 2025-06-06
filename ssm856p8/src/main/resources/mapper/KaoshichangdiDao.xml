@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.KaoshichangdiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.KaoshichangdiEntity" id="kaoshichangdiMap">
+        <result property="kaoshichangdi" column="kaoshichangdi"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.KaoshichangdiVO" >
+		SELECT * FROM kaoshichangdi  kaoshichangdi         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.KaoshichangdiVO" >
+		SELECT  kaoshichangdi.* FROM kaoshichangdi  kaoshichangdi
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.KaoshichangdiView" >
+
+		SELECT  kaoshichangdi.* FROM kaoshichangdi  kaoshichangdi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.KaoshichangdiView" >
+		SELECT * FROM kaoshichangdi  kaoshichangdi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
